@@ -38,7 +38,11 @@ sub print_sms_list {
         my $to      = $array[2];
         my $message = $array[3];
 
-        if ($from) {
+        if (not $from) {
+            $from = "            ";
+        }
+
+        if ($to) {
             print " $date | $from | $to | $message\n";
         }
     }
